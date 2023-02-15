@@ -274,21 +274,6 @@ export default function Deck() {
                     break;
                 }
 
-                /*
-                if (canGoToAce) {
-                    let tempAcePile = [...acePile];
-                    for (let i = 0; i < tempAcePile.length; i++) {
-                        let finalCardInPile = tempAcePile[i][tempAcePile[i].length - 1]
-                        if (finalCardInPile.key + 4 === selectedCardKey) {
-                            tempAcePile[i].push(selectedPile[selectedPile.length - 1]);
-                            selectedPile.pop();
-                            break;
-                        }
-                    }
-                    setAcePile(tempAcePile);
-                    setPiles(tempPiles);
-                    return;
-                }*/
             } catch (err) {
                 //pass
             }
