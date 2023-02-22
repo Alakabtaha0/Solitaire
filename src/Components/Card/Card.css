@@ -1,26 +1,39 @@
 .card {
     display: inline-block;
     padding: 5px 8px;
-    height: 180px;
-    width: 142.3px;
+    height: 130px;
+    width: 90px;
     background-color: white;
     border: 1px solid black;
     border-radius: 5%;
     z-index: 1;
+    cursor: pointer;
 }
 
 .blank-space {
     padding: 5px 8px;
     position: absolute;
-    height: 180px;
-    width: 142.3px;
+    height: 130px;
+    width: 90px;
     border: 1px solid black;
     border-radius: 5%;
 }
 
 .back-card {
-    height: 180px;
-    width: 142.3px;
+    height: 130px;
+    width: 90px;
+}
+
+.sol-pile .back-card {
+    cursor: not-allowed !important;
+}
+
+.shown {
+    transition: all 100ms ease-out;
+}
+
+.shown:hover {
+    transform:scale(102%) translateY(7px);
 }
 
 .red {
@@ -29,5 +42,5 @@
 
 .card h2 {
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
 }

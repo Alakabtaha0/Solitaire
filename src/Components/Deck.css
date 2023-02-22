@@ -1,7 +1,7 @@
 .card-layout {
-    padding: 5px 50px;
+    padding: 5px 250px;
     display: grid;
-    grid-template-columns: 300px repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
 }
 
 .game-layout {
@@ -14,19 +14,23 @@
 
 .ace-pile-layout {
     margin: 0 auto;
-    width: 50%;
+    width: 30%;
     height: 200px;
-    padding-right: 50px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+    z-index: -1;
 }
+
 .ace {
     padding: 5px 8px;
-    height: 180px;
-    width: 142.3px;
-    border: 1px solid black;
+    height: 130px;
+    width: 90px;
     border-radius: 5%;
+    z-index: 2;
+}
+
+.ace .card {
+    position: fixed;
 }
 
 /**CSS for the Pile component -- to be moved later to its own seperate file*/
