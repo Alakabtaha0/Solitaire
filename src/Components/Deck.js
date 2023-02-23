@@ -108,7 +108,6 @@ export default function Deck() {
 
     //Adding cards from Shuffled Decks to Piles
     function addToPile(currentCard) {
-        console.log(currentCard);
         
         //Push from deck to Ace Pile
         if (currentCard.value === "A") {
@@ -511,10 +510,14 @@ export default function Deck() {
             </div>
             <div className="card-layout">
                 <div className="card" onClick={decreaseCurrentCard} >
-                    <img className='back-card' src={PlayingCard} alt='playing card'></img>
+                    {shuffledDeck.length > 0 ? <img className='back-card' src={PlayingCard} alt='playing card'></img> : <div></div>}
                 </div>
 
-                {shuffledDeck.length > 0 && <Card onOnePress={selectCard} card={shuffledDeck[currentCard]} onDoublePress={clickShuffledDeck} />}
+                {
+                    
+                    shuffledDeck.length > 0 && (!shuffledDeck[currentCard] ? decreaseCurrentCard : <Card onOnePress={selectCard} card={shuffledDeck[currentCard]} onDoublePress={clickShuffledDeck} />) 
+                    
+                }
                 {
                     piles.map((pile, i) => {
                         return <Piles
