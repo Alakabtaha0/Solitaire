@@ -5,19 +5,18 @@ import Piles from "./Piles/PIles.js";
 import './Deck.css';
 import PlayingCard from '/Users/vipnumbers/Desktop/Projects/solitaire/src/images/Back of playing card.jpeg';
 
-//// WHAT I NEED TO DO TOMORROW:::
-/**What needs to be done
- *  REFACTOR CODE
- *  When doing the clicking, push a card onto the Ace Pile
- *  Clean Up CSS 
- *  Sort out the Ace Piles -- DONE
- *  You need to do the selection (one click and double click) -- DONE
- *  Debug and test
- *  Uncaught TypeError: Cannot read properties of undefined (reading 'key') Deck.js:216 
- *  Uncaught TypeError: Cannot read properties of undefined (reading 'key') Card.js:25 
- * 
- */
 
+//List of bugs::
+// When you click on an empty pile with the Ace it disappears from the shuffled deck
+// When you run out of cards it just shows a white deck
+// Doesn't show the final card in the shuffled deck until your at the end
+// If there's a bug then it just doesn't show any cards
+// If you pick a card then press next, you need to reset the "First Card selected"
+
+// What needs to be done::
+// Format the code so it fits into components rather than just 1 large component
+// Fix all bugs listed above
+// 
 export default function Deck() {
     const [currentCard, setCurrentCard] = useState(51);
     const [shuffledDeck, setShuffledDeck] = useState([]);
@@ -211,9 +210,9 @@ export default function Deck() {
         //Make Array from Clicked Card Position
         let tempPileArray = selectedPile.slice(pos);
         //Pushing the new spliced pile into a new Pile
-        let tempPiles = [...piles]
+        let tempPiles = [...piles];
         for (let i = 0; i < tempPiles.length; i++) {
-            let currentPile = tempPiles[i]
+            let currentPile = tempPiles[i];
             try {
                 //Adding Cards to blank spot -- King
                 if (currentPile.length === 0) {
@@ -249,7 +248,7 @@ export default function Deck() {
             }
 
         }
-        setPiles(tempPiles)
+        setPiles(tempPiles);
     }
 
 
@@ -277,6 +276,7 @@ export default function Deck() {
             selectedCard = selectedPile[pos];
 
         }
+        
         //adding cards to Ace Pile
         if ((selectedAcePile !== undefined && selectedAcePile.length !== 0) && firstCardSelected.length === 1) {
             if (firstCardSelected[0].number - 1 === selectedAcePile[selectedAcePile.length - 1].number
