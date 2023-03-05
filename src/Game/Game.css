@@ -1,7 +1,10 @@
+/*Global CSS -- NEEDS TO BE CHANGED SO EACH COMPONENT HAS THEIR OWN CSS*/
+
 .card-layout {
     padding: 5px 250px;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
 }
 
 .game-layout {

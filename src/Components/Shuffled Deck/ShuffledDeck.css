@@ -1,0 +1,6 @@
+.shuffled-deck-layout {
+    display: flex;
+    justify-content: space-around;
+    width: 250px;
+    padding: 0 30px;
+}

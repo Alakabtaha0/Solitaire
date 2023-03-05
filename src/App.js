@@ -1,11 +1,11 @@
-
 import './App.css';
-import Deck from './Components/Deck';
+import Game from './Game/Game';
+
 
 function App() {
   return (
     <div className='window'>
-      <Deck />
+      <Game />
     </div>
   );
 }
