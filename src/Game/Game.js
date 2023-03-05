@@ -8,6 +8,10 @@ import { removeCard } from '../utils/helpers/ShuffledDeckUtils';
 import { checkEndGame } from '../utils/helpers/ShuffledDeckUtils';
 import "./Game.css";
 
+//What needs to be done Tomorrow::
+//Solve the bug of the cards disappearing 
+//Do a end game screen Splash screen
+//Do a timer
 function Game() {
     const [resetGame, setResetGame] = useState(false);
     const [currentCard, setCurrentCard] = useState(51);
