@@ -5,7 +5,6 @@ import PlayingCard from '/Users/vipnumbers/Desktop/Projects/solitaire/src/images
 export default function Card({ card, cn, onDoublePress, onOnePress }) {
     
     if (!card) {
-        console.log('error')
         return null;
     } else {
         //Ensuring consistency in clicks

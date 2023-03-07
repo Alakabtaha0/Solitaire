@@ -2,15 +2,17 @@ import React, { useState, useRef } from 'react'
 import InitGame from './InitializeGame.js/InitGame';
 import PlayingField from './Playing Field/PlayingField';
 import MenuBar from '../Components/MenuBar/MenuBar';
+import EndGame from './End Game Splash/EndGame';
 import { GameContext } from '../context';
 import { cardSelect, updateGameState, removeCardsFromPiles } from '/Users/vipnumbers/Desktop/Projects/solitaire/src/utils/helpers/Movement.js';
 import { removeCard } from '../utils/helpers/ShuffledDeckUtils';
-import { checkEndGame } from '../utils/helpers/ShuffledDeckUtils';
+import { checkEndGame } from '../utils/helpers/Global';
 import "./Game.css";
 
+
 //What needs to be done Tomorrow::
-//Solve the bug of the cards disappearing 
-//Do a end game screen Splash screen
+//Solve the bug of the cards disappearing -- Not happening until we can replicate the bug
+//Split css into each of the component files
 //Do a timer
 function Game() {
     const [resetGame, setResetGame] = useState(false);
@@ -21,9 +23,10 @@ function Game() {
     const [firstCardSelected, setFirstCardSelected] = useState(null);
     const [forceUpdate, setForceUpdate] = useState(true); // This is just to force an update when I don't want anything else to update
     const deckRef = useRef(false);
-
+    const [endGame, setEndGame] = useState(false);
 
     function selectCard(e) {
+        setEndGame(checkEndGame(acePile));
         const s = cardSelect(e.target, piles, setForceUpdate);
         if (s === undefined) {
             return;
@@ -58,7 +61,7 @@ function Game() {
                     }
                 })
                 updateGameState(firstCardSelected, setFirstCardSelected);
-                checkEndGame(acePile);
+                setEndGame(checkEndGame(acePile));
                 return;
             }
         } else if (selectedPile.length > 0 && selectedCard.hidden === false) {
@@ -153,12 +156,12 @@ function Game() {
             acePile, setAcePile,
             firstCardSelected, setFirstCardSelected,
             forceUpdate, setForceUpdate,
-            deckRef, resetGame, setResetGame
+            deckRef, resetGame, setResetGame, endGame, setEndGame
         }} >
             <>
                 <MenuBar />
                 <InitGame />
-
+                {endGame && <EndGame />}
                 <PlayingField selectCard={selectCard} />
 
 

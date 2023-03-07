@@ -9,9 +9,12 @@ const Piles = ({ individualPiles, i, onOnePress }) => {
     const {acePile, setAcePile} = useContext(GameContext);
     const {piles, setPiles} = useContext(GameContext);
     const { setForceUpdate} = useContext(GameContext);
+    const {endGame} = useContext(GameContext);
+
 
     //Move cards between piles
     function moveCardsBetweenPiles(e) {
+        checkEndGame(acePile, endGame);
         let s = cardSelect(e.target, piles, setForceUpdate);
         let pos, selectedPile, selectedCard;
         if (s === undefined) {
@@ -30,7 +33,7 @@ const Piles = ({ individualPiles, i, onOnePress }) => {
                         acePile.push(selectedCard);
                         selectedPile.pop();
                         setAcePile(tempAcePile);
-                        checkEndGame(acePile);
+                        checkEndGame(acePile, endGame);
                         return;
                     }
                 }

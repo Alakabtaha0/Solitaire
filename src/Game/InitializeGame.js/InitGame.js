@@ -7,7 +7,7 @@ function InitGame() {
     const {shuffledDeck, setShuffledDeck} = useContext(GameContext);
     const {piles, setPiles} = useContext(GameContext);
     const {deckRef} = useContext(GameContext);
-    const { setCurrentCard} = useContext(GameContext);
+    const {setCurrentCard} = useContext(GameContext);
     const {resetGame} = useContext(GameContext);
 
     useEffect(() => {
@@ -24,6 +24,7 @@ function InitGame() {
             setCurrentCard(shuffledDeck.length - 1);
         }
     });
+
 
     return (
         <div>

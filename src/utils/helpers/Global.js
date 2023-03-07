@@ -6,12 +6,12 @@ export function checkEndGame(acePile) {
         if (pile.length === 13) {
             counter += 1;
         } else {
-            return;
+            return false;
         }
     });
 
     if (counter === 4) {
-        alert('Congratulations! You Win!');
+        return true;
     }
 }
 
@@ -24,4 +24,12 @@ export function checkOppositeColor(firstCard, secondCard) {
         }
     }
 
+}
+
+export function handleReset(setPiles, setAcePile, setShuffledDeck, setResetGame, setEndGame) {
+    setPiles([[], [], [], [], [], []]);
+    setAcePile([[], [], [], []]);
+    setShuffledDeck([]);
+    setResetGame(resetGame => !resetGame);
+    setEndGame(false);
 }

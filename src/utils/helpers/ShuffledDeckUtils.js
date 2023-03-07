@@ -13,27 +13,11 @@ export function removeCard(deck, cardToRemove, setShuffledDeck, currentCard, set
 
 //Move to next card in shuffled deck
 export function decreaseCurrentCard(shuffledDeck, currentCard, setCurrentCard) {
-    let nextCard = shuffledDeck[currentCard - 2]
+    let nextCard = shuffledDeck[currentCard - 1]
     if (nextCard === undefined && shuffledDeck.length > 1) {
         setCurrentCard(shuffledDeck.length - 1)
     } else {
         setCurrentCard(currentCard - 1);
-    }
-}
-
-
-export function checkEndGame(acePile) {
-    let counter = 0;
-    acePile.forEach((pile) => {
-        if (pile.length === 13) {
-            counter += 1;
-        } else {
-            return;
-        }
-    });
-
-    if (counter === 4) {
-        alert('Congratulations! You Win!');
     }
 }
 

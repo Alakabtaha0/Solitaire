@@ -1,0 +1,48 @@
+.menu--blocker {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    z-index: 3;
+    background-color: rgba(69, 69, 69, 0.361);
+}
+.menu-window {
+    background-color: white;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    border: 3px solid black;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.menu-window-header {
+    font-family: 'Genos', sans-serif;
+    height: 30px;
+    text-align: center;
+    color: black;
+    text-transform: capitalize;
+    margin-top: 50px;
+}
+
+
+.btn-1 {
+    font-family: 'Genos', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid black;
+    border-bottom: 10px solid black;
+    padding: 10px 80px;
+    margin-top: 100px;
+    cursor: pointer;
+}
+
+.btn-1:active {
+    transform: translateY(10px);
+    border-bottom: 2px solid black;
+}

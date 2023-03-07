@@ -5,12 +5,11 @@ import ShuffledDeck from '../../Components/Shuffled Deck/ShuffledDeck'
 import { GameContext } from '../../context';
 import { cardSelect } from '../../utils/helpers/Movement';
 
-
 function PlayingField({ selectCard }) {
     const { piles } = useContext(GameContext);
     const { acePile } = useContext(GameContext);
     const { firstCardSelected, setFirstCardSelected } = useContext(GameContext);
-
+    
     //Moving card back to the game from the ace pile
     function moveBackToGame(e) {
         const s = cardSelect(e.target, piles);

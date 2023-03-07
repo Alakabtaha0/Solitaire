@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import PlayingCard from '/Users/vipnumbers/Desktop/Projects/solitaire/src/images/Back of playing card.jpeg';
 import Card from '../Card/Card';
 import './ShuffledDeck.css';
-import { removeCard, decreaseCurrentCard, checkEndGame, checkOppositeColor } from '../../utils/helpers/ShuffledDeckUtils';
+import { removeCard, decreaseCurrentCard, checkOppositeColor } from '../../utils/helpers/ShuffledDeckUtils';
+import { checkEndGame } from '../../utils/helpers/Global';
 import { GameContext } from '../../context';
 
 function ShuffledDeck({ selectCard }) {
@@ -10,7 +11,8 @@ function ShuffledDeck({ selectCard }) {
     const { piles, setPiles } = useContext(GameContext);
     const { acePile, setAcePile } = useContext(GameContext);
     const { currentCard, setCurrentCard } = useContext(GameContext);
-
+    const {setEndGame} = useContext(GameContext);
+    
     //Adding cards from Shuffled Decks to Piles
     function addToPile(selectedCard) {
 
@@ -42,7 +44,7 @@ function ShuffledDeck({ selectCard }) {
                     removeCard(shuffledDeck, selectedCard, setShuffledDeck, currentCard, setCurrentCard);
                     decreaseCurrentCard(shuffledDeck, currentCard, setCurrentCard);
                     setAcePile(tempAcePile);
-                    checkEndGame(acePile);
+                    setEndGame(checkEndGame(acePile));
                     return;
                 }
             }
