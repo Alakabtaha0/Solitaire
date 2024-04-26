@@ -4,7 +4,7 @@ import PlayingField from './Playing Field/PlayingField';
 import MenuBar from '../Components/MenuBar/MenuBar';
 import EndGame from './End Game Splash/EndGame';
 import { GameContext } from '../context';
-import { cardSelect, updateGameState, removeCardsFromPiles } from '/Users/vipnumbers/Desktop/Projects/solitaire/src/utils/helpers/Movement.js';
+import { cardSelect, updateGameState, removeCardsFromPiles } from '../utils/helpers/Movement.js';
 import { removeCard } from '../utils/helpers/ShuffledDeckUtils';
 import { checkEndGame } from '../utils/helpers/Global';
 import "./Game.css";

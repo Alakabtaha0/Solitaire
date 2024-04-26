@@ -12,7 +12,7 @@ function InitGame() {
 
     useEffect(() => {
         createDeck(setShuffledDeck);
-    }, [resetGame])
+    }, [resetGame, setShuffledDeck])
 
     if (shuffledDeck.length === 52) {
         deckRef.current = true

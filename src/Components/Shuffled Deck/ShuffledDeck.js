@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import PlayingCard from '/Users/vipnumbers/Desktop/Projects/solitaire/src/images/Back of playing card.jpeg';
+import PlayingCard from '../../images/Back of playing card.jpeg';
 import Card from '../Card/Card';
 import './ShuffledDeck.css';
 import { removeCard, decreaseCurrentCard, checkOppositeColor } from '../../utils/helpers/ShuffledDeckUtils';

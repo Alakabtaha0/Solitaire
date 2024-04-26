@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import "./MenuBar.css";
-import ResetButton from '/Users/vipnumbers/Desktop/Projects/solitaire/src/images/Reset Button.png';
+import ResetButton from '../../images/Reset Button.png';
 import { GameContext } from '../../context';
 import { handleReset } from '../../utils/helpers/Global';
 function MenuBar() {

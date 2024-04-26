@@ -1,6 +1,6 @@
 import React from "react";
 import './Card.css';
-import PlayingCard from '/Users/vipnumbers/Desktop/Projects/solitaire/src/images/Back of playing card.jpeg';
+import PlayingCard from '../../images/Back of playing card.jpeg';
 
 export default function Card({ card, cn, onDoublePress, onOnePress }) {
     
